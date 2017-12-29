@@ -31,3 +31,28 @@ func TestShiftOverlap(t *testing.T) {
 	}
 	t.Logf("Encoded message: %v", message)
 }
+
+func TestShiftDecode(t *testing.T) {
+	message := "gluhtlishjrvbadvyyplkaohavbyjpwolypzavvdlhrvuuleatlzzhnlzdpajoavcpnlulyljpwolyrlfdvykpzaolopkkluzftivsvmklhaoputfmhcvypalovsilpuluk"
+
+	message, err := Shift(message, 19)
+	if err != nil {
+		t.Errorf("Shift invocation failed due to: %v", err.Error())
+	}
+	t.Logf("Encoded message: %v", message)
+}
+
+func TestShiftDecode2(t *testing.T) {
+	// WILL NOT WORK, REQURES A vigenere CYPHER
+	
+	//startwarningiheardreportofourbreakinonthenewsstillwaitingonalarmtestschedulesiwillreport
+	//backtomorrowwithfinalplanforextrasecurityisuggestweburnourlettersafterreadingandswitchour
+	//letterstonumbersusingpolybiussquaredopmessageunderthebenchattrainstationend
+	message := "vwduwljudeehghyhubwklqjlfrxogilqgsohdvhuhwxuqdqbeoxhsulqwviruydxowdqgdodupghvljqedvhgrqzklfkedqnbrxghflghrqldpvhwwlqjxsvdihkrxvhfr"
+
+	message, err := Shift(message, 19)
+	if err != nil {
+		t.Errorf("Shift invocation failed due to: %v", err.Error())
+	}
+	t.Logf("Encoded message: %v", message)
+}
